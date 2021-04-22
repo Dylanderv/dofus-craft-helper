@@ -22,9 +22,8 @@ export function Add({ addOneItemToCraftList }) {
         const newColumns = [
             { key: 'edit', name: '', fieldName: 'edit', isResizable: false,
                 onRender: (item) => (
-                    // <IconButton iconProps={{iconName: "Add"}} title="Ajouter à la liste de craft" ariaLabel="Ajouter à la liste de craft"
-                    //     onClick={() => addOneItemToCraftList(item)}/>
-                        <button onClick={() => addOneItemToCraftList(item)}>test</button>
+                    <IconButton iconProps={{iconName: "Add"}} title="Ajouter à la liste de craft" ariaLabel="Ajouter à la liste de craft"
+                        onClick={() => addOneItemToCraftList(item)}/>
                 ), minWidth: 10, maxWidth: 30
             },
             { key: 'column1', name: 'Nom', fieldName: 'recipeName', minWidth: 100, maxWidth: 200, isResizable: true },
