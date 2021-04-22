@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/dofus-craft-helper/static/css/main.ea1455b2.chunk.css",
-    "main.js": "/dofus-craft-helper/static/js/main.ffcde315.chunk.js",
-    "main.js.map": "/dofus-craft-helper/static/js/main.ffcde315.chunk.js.map",
-    "runtime-main.js": "/dofus-craft-helper/static/js/runtime-main.d20e0bef.js",
-    "runtime-main.js.map": "/dofus-craft-helper/static/js/runtime-main.d20e0bef.js.map",
-    "static/js/2.89d3769d.chunk.js": "/dofus-craft-helper/static/js/2.89d3769d.chunk.js",
-    "static/js/2.89d3769d.chunk.js.map": "/dofus-craft-helper/static/js/2.89d3769d.chunk.js.map",
-    "static/js/3.5af312ba.chunk.js": "/dofus-craft-helper/static/js/3.5af312ba.chunk.js",
-    "static/js/3.5af312ba.chunk.js.map": "/dofus-craft-helper/static/js/3.5af312ba.chunk.js.map",
+    "main.js": "/dofus-craft-helper/static/js/main.059854cc.chunk.js",
+    "main.js.map": "/dofus-craft-helper/static/js/main.059854cc.chunk.js.map",
+    "runtime-main.js": "/dofus-craft-helper/static/js/runtime-main.59456acd.js",
+    "runtime-main.js.map": "/dofus-craft-helper/static/js/runtime-main.59456acd.js.map",
+    "static/js/2.8925475a.chunk.js": "/dofus-craft-helper/static/js/2.8925475a.chunk.js",
+    "static/js/2.8925475a.chunk.js.map": "/dofus-craft-helper/static/js/2.8925475a.chunk.js.map",
+    "static/js/3.376e3e15.chunk.js": "/dofus-craft-helper/static/js/3.376e3e15.chunk.js",
+    "static/js/3.376e3e15.chunk.js.map": "/dofus-craft-helper/static/js/3.376e3e15.chunk.js.map",
     "index.html": "/dofus-craft-helper/index.html",
     "static/css/main.ea1455b2.chunk.css.map": "/dofus-craft-helper/static/css/main.ea1455b2.chunk.css.map",
-    "static/js/2.89d3769d.chunk.js.LICENSE.txt": "/dofus-craft-helper/static/js/2.89d3769d.chunk.js.LICENSE.txt"
+    "static/js/2.8925475a.chunk.js.LICENSE.txt": "/dofus-craft-helper/static/js/2.8925475a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.d20e0bef.js",
-    "static/js/2.89d3769d.chunk.js",
+    "static/js/runtime-main.59456acd.js",
+    "static/js/2.8925475a.chunk.js",
     "static/css/main.ea1455b2.chunk.css",
-    "static/js/main.ffcde315.chunk.js"
+    "static/js/main.059854cc.chunk.js"
   ]
 }
