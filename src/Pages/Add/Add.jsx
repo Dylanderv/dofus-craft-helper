@@ -28,7 +28,8 @@ export function Add({ addOneItemToCraftList }) {
           },
           { key: 'img', name: '', fieldName: 'edit', isResizable: false,
               onRender: (item) => (
-                  <img width="30" alt="item icon" src={require(`../../images/${item.relatedItem.iconId}.png`).default}/>
+                  // <img width="30" alt="item icon" src={require(`../../images/${item.relatedItem.iconId}.png`).default}/>
+                  <span></span>
               ), minWidth: 10, maxWidth: 30
           },
             { key: 'column1', name: 'Nom', fieldName: 'recipeName', minWidth: 100, maxWidth: 200, isResizable: true },

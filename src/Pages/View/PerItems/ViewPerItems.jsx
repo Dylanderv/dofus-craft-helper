@@ -21,7 +21,8 @@ export function ViewPerItems({ craftList, removeOneItemFromList, removeAllItems 
             },
             { key: 'img', name: '', fieldName: 'edit', isResizable: false,
                 onRender: (item) => (
-                    <img alt="item icon" width="30" src={require(`../../../images/${item.iconId}.png`).default}/>
+                    // <img alt="item icon" width="30" src={require(`../../../images/${item.iconId}.png`).default}/>
+                    <span></span>
                 ), minWidth: 10, maxWidth: 30
             },
             { key: 'column1', name: 'Nom', fieldName: 'name', minWidth: 100, maxWidth: 200, isResizable: true },
@@ -67,7 +68,8 @@ export function ViewPerItems({ craftList, removeOneItemFromList, removeAllItems 
             {itemListWithMergedDuplicated().map(item => 
                 <div>
                     <h3>
-                        <img alt="item icon" src={require(`../../../images/${item.data.relatedItem.iconId}.png`).default}/>
+                        {/* <img alt="item icon" src={require(`../../../images/${item.data.relatedItem.iconId}.png`).default}/> */}
+                        <span></span>
                         {item.data.recipeName} {item.quantity > 1 ? `x${item.quantity}` : ""}
                         <IconButton iconProps={{iconName: "Delete"}} title="Ajouter à la liste de craft" ariaLabel="Ajouter à la liste de craft"
                             onClick={() => removeOneItemFromList(item.data)}/>

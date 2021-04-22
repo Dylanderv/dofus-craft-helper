@@ -22,7 +22,8 @@ export function ViewGlobal({ craftList, removeAllItems }) {
             },
             { key: 'img', name: '', fieldName: 'edit', isResizable: false,
                 onRender: (item) => (
-                    <img alt="item icon" width="30" src={require(`../../../images/${item.iconId}.png`).default}/>
+                    // <img alt="item icon" width="30" src={require(`../../../images/${item.iconId}.png`).default}/>
+                    <span></span>
                 ), minWidth: 10, maxWidth: 30
             },
             { key: 'column1', name: 'Nom', fieldName: 'name', minWidth: 100, maxWidth: 200, isResizable: true },
