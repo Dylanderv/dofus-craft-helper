@@ -17,12 +17,12 @@ export function Main() {
     const addOneItemToCraftList = (itemToAdd) => {
         let clone = {...itemToAdd};
         clone.uuid = uuidv4();
-        SaveSelectedRecipes([...craftList, clone]);
+        SaveSelectedRecipes([...GetSelectedRecipes(), clone]);
         setCraftList(craft => [...craft, clone]);
     }
 
     const removeOneItemFromList = (itemToRemove) => {
-      SaveSelectedRecipes(craftList.filter(x => x.uuid !== itemToRemove.uuid));
+      SaveSelectedRecipes(GetSelectedRecipes().filter(x => x.uuid !== itemToRemove.uuid));
       setCraftList(craft => craft.filter(x => x.uuid !== itemToRemove.uuid));
     }
 
