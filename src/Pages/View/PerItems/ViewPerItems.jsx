@@ -1,14 +1,27 @@
-import { DetailsList, DetailsListLayoutMode, IconButton, SelectionMode } from "@fluentui/react"
+import { Checkbox, DetailsList, DetailsListLayoutMode, IconButton, PrimaryButton, SelectionMode, TextField } from "@fluentui/react"
 import { useEffect, useState } from "react";
 
-export function ViewPerItems({ craftList, removeOneItemFromList}) {
+const narrowTextFieldStyles = { fieldGroup: { width: 60 }, display: "inline" };
+
+export function ViewPerItems({ craftList, removeOneItemFromList, removeAllItems }) {
     const [columns, setColumns] = useState([]);
+    const [itemList, setItemList] = useState([]);
 
     useEffect(() => {
         const newColumns = [
+            { key: 'check', name: '', fieldName: 'edit', isResizable: false,
+                onRender: () => (
+                    <Checkbox/>
+                ), minWidth: 10, maxWidth: 30
+            },
+            { key: 'number', name: '', fieldName: 'edit', isResizable: true,
+                onRender: (item) => (
+                    <div><TextField styles={narrowTextFieldStyles} /> / {item.quantity}</div>
+                ), minWidth: 10, maxWidth: 60
+            },
             { key: 'img', name: '', fieldName: 'edit', isResizable: false,
                 onRender: (item) => (
-                    <img width="30" src={require(`../../../images/${item.iconId}.png`).default}/>
+                    <img alt="item icon" width="30" src={require(`../../../images/${item.iconId}.png`).default}/>
                 ), minWidth: 10, maxWidth: 30
             },
             { key: 'column1', name: 'Nom', fieldName: 'name', minWidth: 100, maxWidth: 200, isResizable: true },
@@ -16,7 +29,9 @@ export function ViewPerItems({ craftList, removeOneItemFromList}) {
             { key: 'column3', name: 'Quantité', fieldName: 'quantity', minWidth: 100, maxWidth: 200, isResizable: true },
           ];
         setColumns(newColumns);
-      }, []);
+
+        setItemList(itemListWithMergedDuplicated());
+      }, [craftList]);
 
     const recipeToItemList = (recipe, quantity) => {
         return recipe.ingredients.map(ingredient => {
@@ -43,7 +58,6 @@ export function ViewPerItems({ craftList, removeOneItemFromList}) {
                 });
             }
         })
-        console.log(mergedList)
         return mergedList;
     }
 
@@ -53,7 +67,7 @@ export function ViewPerItems({ craftList, removeOneItemFromList}) {
             {itemListWithMergedDuplicated().map(item => 
                 <div>
                     <h3>
-                        <img src={require(`../../../images/${item.data.relatedItem.iconId}.png`).default}/>
+                        <img alt="item icon" src={require(`../../../images/${item.data.relatedItem.iconId}.png`).default}/>
                         {item.data.recipeName} {item.quantity > 1 ? `x${item.quantity}` : ""}
                         <IconButton iconProps={{iconName: "Delete"}} title="Ajouter à la liste de craft" ariaLabel="Ajouter à la liste de craft"
                             onClick={() => removeOneItemFromList(item.data)}/>

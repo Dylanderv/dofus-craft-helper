@@ -5,7 +5,7 @@ import { allRecipesToIngredientList } from "../../../Services/RecipesService";
 
 const narrowTextFieldStyles = { fieldGroup: { width: 60 }, display: "inline" };
 
-export function ViewGlobal({ craftList }) {
+export function ViewGlobal({ craftList, removeAllItems }) {
     const [columns, setColumns] = useState([]);
 
     useEffect(() => {
@@ -22,7 +22,7 @@ export function ViewGlobal({ craftList }) {
             },
             { key: 'img', name: '', fieldName: 'edit', isResizable: false,
                 onRender: (item) => (
-                    <img width="30" src={require(`../../../images/${item.iconId}.png`).default}/>
+                    <img alt="item icon" width="30" src={require(`../../../images/${item.iconId}.png`).default}/>
                 ), minWidth: 10, maxWidth: 30
             },
             { key: 'column1', name: 'Nom', fieldName: 'name', minWidth: 100, maxWidth: 200, isResizable: true },
@@ -35,7 +35,6 @@ export function ViewGlobal({ craftList }) {
 
       const getIngredientList = () => {
           let ingredientList = allRecipesToIngredientList(craftList);
-          console.log(ingredientList);
           ingredientList.forEach(x => x.recipes = ingredientRecipesNameToDisplayedName(x.recipes))
           return ingredientList;
       }
@@ -54,14 +53,6 @@ export function ViewGlobal({ craftList }) {
                 }
             });
             return nameOccurencies.map(x => `${x.name} x${x.occurence}`).join(", ");
-      }
-
-      const onEditCheckedMetadata = (checkMetadata) => {
-
-      }
-
-      const onEditTextMetadata = (textMetadata) => {
-          
       }
 
     return <div>

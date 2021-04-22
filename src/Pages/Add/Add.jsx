@@ -1,4 +1,4 @@
-import { CommandBar, CommandButton, DetailsList, DetailsListLayoutMode, IconButton, Selection, SelectionMode, TextField, Toggle } from "@fluentui/react"
+import { DetailsList, DetailsListLayoutMode, IconButton, SelectionMode, TextField, Toggle } from "@fluentui/react"
 import { useEffect, useRef, useState } from "react";
 import { FilterRecipes } from "../../Services/RecipesService"
 
@@ -28,7 +28,7 @@ export function Add({ addOneItemToCraftList }) {
           },
           { key: 'img', name: '', fieldName: 'edit', isResizable: false,
               onRender: (item) => (
-                  <img width="30" src={require(`../../images/${item.relatedItem.iconId}.png`).default}/>
+                  <img width="30" alt="item icon" src={require(`../../images/${item.relatedItem.iconId}.png`).default}/>
               ), minWidth: 10, maxWidth: 30
           },
             { key: 'column1', name: 'Nom', fieldName: 'recipeName', minWidth: 100, maxWidth: 200, isResizable: true },
