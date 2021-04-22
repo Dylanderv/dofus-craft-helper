@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/dofus-craft-helper/static/css/main.ea1455b2.chunk.css",
+    "main.js": "/dofus-craft-helper/static/js/main.807e6dd4.chunk.js",
+    "main.js.map": "/dofus-craft-helper/static/js/main.807e6dd4.chunk.js.map",
+    "runtime-main.js": "/dofus-craft-helper/static/js/runtime-main.76dba0f6.js",
+    "runtime-main.js.map": "/dofus-craft-helper/static/js/runtime-main.76dba0f6.js.map",
+    "static/js/2.0f764ebe.chunk.js": "/dofus-craft-helper/static/js/2.0f764ebe.chunk.js",
+    "static/js/2.0f764ebe.chunk.js.map": "/dofus-craft-helper/static/js/2.0f764ebe.chunk.js.map",
+    "static/js/3.a183a51b.chunk.js": "/dofus-craft-helper/static/js/3.a183a51b.chunk.js",
+    "static/js/3.a183a51b.chunk.js.map": "/dofus-craft-helper/static/js/3.a183a51b.chunk.js.map",
+    "index.html": "/dofus-craft-helper/index.html",
+    "static/css/main.ea1455b2.chunk.css.map": "/dofus-craft-helper/static/css/main.ea1455b2.chunk.css.map",
+    "static/js/2.0f764ebe.chunk.js.LICENSE.txt": "/dofus-craft-helper/static/js/2.0f764ebe.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.76dba0f6.js",
+    "static/js/2.0f764ebe.chunk.js",
+    "static/css/main.ea1455b2.chunk.css",
+    "static/js/main.807e6dd4.chunk.js"
+  ]
+}
