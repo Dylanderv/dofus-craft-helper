@@ -8,18 +8,22 @@ import { Add } from './Add/Add';
 import { ViewGlobal } from './View/Global/ViewGlobal';
 import { ViewPerItems } from './View/PerItems/ViewPerItems';
 import { useState } from 'react';
+import { uuidv4 } from "../Helper/UUIDHelper";
 
 export function Main() {
     const [craftList, setCraftList] = useState([])
 
     const addOneItemToCraftList = (itemToAdd) => {
-        console.log("called", itemToAdd);
-        console.log("current", craftList);
-        const newItems = [...craftList, itemToAdd]
-        console.log("new items", newItems);
-        setCraftList(craft => [...craft, itemToAdd]);
-        console.log("fin", craftList);
+        let clone = {...itemToAdd};
+        clone.uuid = uuidv4();
+        setCraftList(craft => [...craft, clone]);
+    }
 
+    const removeOneItemFromList = (itemToRemove) => {
+      console.log("itemToRemove", itemToRemove);
+      console.log(craftList)
+      console.log(craftList.filter(x => x.uuid !== itemToRemove.uuid))
+      setCraftList(craft => craft.filter(x => x.uuid !== itemToRemove.uuid));
     }
 
     return <div>
@@ -33,7 +37,7 @@ export function Main() {
             <ViewGlobal craftList={craftList} />
           </Route>
           <Route path="/view/perItems">
-            <ViewPerItems craftList={craftList} />
+            <ViewPerItems craftList={craftList} removeOneItemFromList={removeOneItemFromList} />
           </Route>
           <Route path="/add">
             <Add addOneItemToCraftList={addOneItemToCraftList} />

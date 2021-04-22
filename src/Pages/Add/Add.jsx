@@ -20,12 +20,17 @@ export function Add({ addOneItemToCraftList }) {
         updateItems(newItems);
     
         const newColumns = [
-            { key: 'edit', name: '', fieldName: 'edit', isResizable: false,
-                onRender: (item) => (
-                    <IconButton iconProps={{iconName: "Add"}} title="Ajouter à la liste de craft" ariaLabel="Ajouter à la liste de craft"
-                        onClick={() => addOneItemToCraftList(item)}/>
-                ), minWidth: 10, maxWidth: 30
-            },
+          { key: 'edit', name: '', fieldName: 'edit', isResizable: false,
+            onRender: (item) => (
+              <IconButton iconProps={{iconName: "Add"}} title="Ajouter à la liste de craft" ariaLabel="Ajouter à la liste de craft"
+              onClick={() => addOneItemToCraftList(item)}/>
+              ), minWidth: 10, maxWidth: 30
+          },
+          { key: 'img', name: '', fieldName: 'edit', isResizable: false,
+              onRender: (item) => (
+                  <img width="30" src={require(`../../images/${item.relatedItem.iconId}.png`).default}/>
+              ), minWidth: 10, maxWidth: 30
+          },
             { key: 'column1', name: 'Nom', fieldName: 'recipeName', minWidth: 100, maxWidth: 200, isResizable: true },
             { key: 'column2', name: 'Type', fieldName: 'recipeType', minWidth: 100, maxWidth: 200, isResizable: true },
             { key: 'column3', name: 'Level', fieldName: 'level', minWidth: 100, maxWidth: 200, isResizable: true },

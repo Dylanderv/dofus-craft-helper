@@ -26,7 +26,8 @@ export function allRecipesToIngredientList(recipes) {
                 name: ingredient.item.name,
                 level: ingredient.item.level,
                 quantity: ingredient.quantity,
-                recipes: [recipe.recipeName]
+                recipes: [recipe.recipeName],
+                iconId: ingredient.item.iconId
             }
         })
     });

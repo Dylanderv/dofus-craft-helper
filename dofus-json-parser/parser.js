@@ -14,13 +14,15 @@ function link() {
             const recipeType = i18n_fr.texts[GetItemType(recipe.resultTypeId).nameId]
             const level = recipe.resultLevel;
             const ingredients = ProcessIngredients(recipe.ingredientIds, recipe.quantities);
+            const relatedItem = GetUsefullItemData(GetItem(recipe.resultId));
             return({
                 key: recipe.resultId,
                 itemId: recipe.resultId,
                 recipeName,
                 recipeType,
                 level,
-                ingredients
+                ingredients,
+                relatedItem
             });
         })
     }
@@ -40,7 +42,8 @@ function GetUsefullItemData(item) {
     return {
         id: item.id,
         level: item.level,
-        name: i18n_fr.texts[item.nameId]
+        name: i18n_fr.texts[item.nameId],
+        iconId: item.iconId
     }
 }
 
