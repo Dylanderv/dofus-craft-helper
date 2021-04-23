@@ -27,6 +27,7 @@ export function ViewGlobal({ craftList, removeAllItems }) {
                 ), minWidth: 10, maxWidth: 30
             },
             { key: 'column1', name: 'Nom', fieldName: 'name', minWidth: 100, maxWidth: 200, isResizable: true },
+            { key: 'column2', name: 'Type', fieldName: 'type', minWidth: 100, maxWidth: 200, isResizable: true },
             { key: 'column3', name: 'Quantité', fieldName: 'quantity', minWidth: 100, maxWidth: 200, isResizable: true },
             { key: 'column2', name: 'Level', fieldName: 'level', minWidth: 100, maxWidth: 200, isResizable: true },
             { key: 'column4', name: 'Recettes', fieldName: 'recipes', minWidth: 100, maxWidth: 200, isResizable: true },

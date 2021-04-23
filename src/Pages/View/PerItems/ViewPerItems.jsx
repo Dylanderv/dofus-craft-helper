@@ -35,21 +35,23 @@ export function ViewPerItems({ craftList, removeOneItemFromList, removeAllItems 
       }, [craftList]);
 
     const recipeToItemList = (recipe, quantity) => {
-        return recipe.ingredients.map(ingredient => {
-            return {
-                key: ingredient.item.id,
-                name: ingredient.item.name,
-                level: ingredient.item.level,
-                quantity: ingredient.quantity * quantity,
-                iconId: ingredient.item.iconId
-            }
-        });
+        return recipe.ingredients === null ?
+            [] :
+            recipe.ingredients?.map(ingredient => {
+                return {
+                    key: ingredient.item.id,
+                    name: ingredient.item.name,
+                    level: ingredient.item.level,
+                    quantity: ingredient.quantity * quantity,
+                    iconId: ingredient.item.iconId
+                }
+            });
     }
 
     const itemListWithMergedDuplicated = () => {
         let mergedList = [];
         craftList.forEach(item => {
-            let elementInList = mergedList.find(x => x.data.itemId === item.itemId);
+            let elementInList = mergedList.find(x => x.data.id === item.id);
             if (elementInList !== undefined) {
                 elementInList.quantity ++;
             } else {
@@ -59,27 +61,31 @@ export function ViewPerItems({ craftList, removeOneItemFromList, removeAllItems 
                 });
             }
         })
+        console.log(mergedList);
         return mergedList;
     }
 
     return <div>
 
             <h2> View per items </h2>
-            {itemListWithMergedDuplicated().map(item => 
+            {itemList.map(item => 
                 <div>
                     <h3>
                         {/* <img alt="item icon" src={require(`../../../images/${item.data.relatedItem.iconId}.png`).default}/> */}
                         <span></span>
-                        {item.data.recipeName} {item.quantity > 1 ? `x${item.quantity}` : ""}
+                        {item.data.name} {item.quantity > 1 ? `x${item.quantity}` : ""}
                         <IconButton iconProps={{iconName: "Delete"}} title="Ajouter à la liste de craft" ariaLabel="Ajouter à la liste de craft"
                             onClick={() => removeOneItemFromList(item.data)}/>
                         </h3>
-                    <DetailsList
-                        items={recipeToItemList(item.data, item.quantity)}
-                        columns={columns}
-                        layoutMode={DetailsListLayoutMode.justified}
-                        selectionMode={SelectionMode.none}
-                    />
+                        {item.data.ingredients !== null ?
+                            <DetailsList
+                                items={recipeToItemList(item.data, item.quantity)}
+                                columns={columns}
+                                layoutMode={DetailsListLayoutMode.justified}
+                                selectionMode={SelectionMode.none}
+                            />
+                        :   <span></span>}
+                    
                 </div>
                 )}
         

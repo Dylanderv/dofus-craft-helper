@@ -5,13 +5,12 @@ export function GetFirstRecipe() {
 }
 
 export function FilterRecipes(nameFilter = "", typeFilter = "", levelMin = 0, levelMax = 200) {
-    const test = Recipes.recipes.filter(x => 
-        firstNameContainsOther(x.recipeName, nameFilter)
-        && firstNameContainsOther(x.recipeType, typeFilter)
+    return Recipes.recipes.filter(x => {
+        return firstNameContainsOther(x.name, nameFilter)
+        && firstNameContainsOther(x.type, typeFilter)
         && x.level <= levelMax
         && x.level >= levelMin
-    );
-    return test;
+    });
 }
 
 function firstNameContainsOther(name1, name2) {
@@ -20,14 +19,27 @@ function firstNameContainsOther(name1, name2) {
 
 export function allRecipesToIngredientList(recipes) {
     const ingredientList = recipes.flatMap(recipe => {
+        if (recipe.ingredients === null) {
+            return {
+                key: recipe.id,
+                name: recipe.name,
+                level: recipe.level,
+                quantity: 1,
+                recipes: [recipe.name],
+                iconId: recipe.iconId,
+                type: recipe.type
+            }
+        }
         return recipe.ingredients.map(ingredient => {
+            console.log(recipe)
             return {
                 key: ingredient.item.id,
                 name: ingredient.item.name,
                 level: ingredient.item.level,
                 quantity: ingredient.quantity,
-                recipes: [recipe.recipeName],
-                iconId: ingredient.item.iconId
+                recipes: [recipe.name],
+                iconId: ingredient.item.iconId,
+                type: ingredient.item.type
             }
         })
     });
