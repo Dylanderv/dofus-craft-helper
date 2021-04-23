@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/dofus-craft-helper/static/css/main.ea1455b2.chunk.css",
-    "main.js": "/dofus-craft-helper/static/js/main.059854cc.chunk.js",
-    "main.js.map": "/dofus-craft-helper/static/js/main.059854cc.chunk.js.map",
+    "main.js": "/dofus-craft-helper/static/js/main.7672ec18.chunk.js",
+    "main.js.map": "/dofus-craft-helper/static/js/main.7672ec18.chunk.js.map",
     "runtime-main.js": "/dofus-craft-helper/static/js/runtime-main.59456acd.js",
     "runtime-main.js.map": "/dofus-craft-helper/static/js/runtime-main.59456acd.js.map",
     "static/js/2.8925475a.chunk.js": "/dofus-craft-helper/static/js/2.8925475a.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.59456acd.js",
     "static/js/2.8925475a.chunk.js",
     "static/css/main.ea1455b2.chunk.css",
-    "static/js/main.059854cc.chunk.js"
+    "static/js/main.7672ec18.chunk.js"
   ]
 }
